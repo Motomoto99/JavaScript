@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        let name = "太郎";
+        let age = 30;
+        let isActive = true;
+        let score = null;
+        let description = undefined;
+        let bigInteger = 1234567890123456789012345678901234567890n;
+        let sym1 = Symbol('key');
+
+        console.log("名前:", name);
+        console.log("年齢:", age);
+        console.log("アクティブ:", isActive);
+        console.log("スコア:", score);
+        console.log("説明:", description);
+        console.log("大きな整数:", bigInteger);
+        console.log("シンボル:", sym1.toString());  // Symbolはそのままでは文字列に変換できないため、toString()を使用
+        console.log("シンボルの中身", sym1);
+
+        console.log(1 === parseInt('1'));
+        console.log(1 == '1');
+        console.log(1 === '1');
+
+
+    </script>
+</body>
+
+</html>

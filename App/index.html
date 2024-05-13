@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>リアルタイムフォームバリデーション</title>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>フォーム入力チェックデモ</h1>
+    <form id="form">
+        <label for="email">メールアドレス:</label>
+        <input type="text" id="email" name="email">
+        <p id="error-message" class="error hidden">正しいメールアドレスを入力してください。</p>
+        <button type="submit">送信</button>
+    </form>
+
+    <script>
+        document.getElementById('email').addEventListener('input', function (event) {
+            var email = event.target.value;
+            var errorMessage = document.getElementById('error-message');
+            if (email.includes('@') && email.includes('.')) {
+                errorMessage.classList.add('hidden');
+            } else {
+                errorMessage.classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('form').addEventListener('submit', function (event) {
+            var email = document.getElementById('email').value;
+            if (!email.includes('@') || !email.includes('.')) {
+                event.preventDefault();
+                alert('フォームにエラーがあります。');
+            }
+        });
+    </script>
+</body>
+
+</html>
