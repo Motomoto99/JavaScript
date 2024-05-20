@@ -1,0 +1,38 @@
+<script>
+    // Step 1: 関数式で定数に関数を代入
+    const complexCalculation = function (a, b) { // Step 1
+        // 無名関数で掛け算を行う
+        const multiply = function (x, y) {
+            return x * y; // Step2
+        };
+        // アロー関数で足し算を行う
+        const add = (x, y) => x + y;
+
+        // multiplyとaddを使って計算
+        let result1 = multiply(a, b);
+        let result2 = add(a, b);
+
+        // 最終結果を返す
+        return result1 + result2;
+    };
+
+    // 関数呼び出し
+    let result = complexCalculation(3, 4); // Step 4
+
+    // 最後の出力
+    console.log('コードの実行を完了しました。');
+
+    /** Stepの値
+    
+    Step 1 : a = ?
+    Step 1 : b = ?
+    Step 2 : x = ?
+    Step 2 : y = ?
+    Step 2 : returnされる値 = ?
+    Step 3 : x = ?
+    Step 3 : y = ?
+    Step 3 : 戻される値 = ?
+    Step 4 : resultの値 = ?
+    
+    **/
+</script>
