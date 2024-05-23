@@ -109,7 +109,6 @@
     function fun(value) {
         return value * 2;
     }
-    */
 
     //演習１３
     const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -119,5 +118,81 @@
     function odd(value) {
         return value % 2 !== 0;
     }
+
+    //演習１４
+    const values = [1, 2, 3, 4, 5];
+    console.log(values.every(greaterThanZero));
+    console.log(values.every(greaterThanThree));
+
+    function greaterThanZero(value) {
+        return value > 0;
+    }
+
+    function greaterThanThree(value) {
+        return value > 3;
+    }
+
+    //演習１５
+    const values = [1, 2, 3, 4, 5];
+    console.log(values.some(greaterThanZero));
+    console.log(values.some(greaterThanThree));
+
+    function greaterThanZero(value) {
+        return value > 0;
+    }
+
+    function greaterThanThree(value) {
+        return value > 3;
+    }
+
+    //演習１６
+    const values = [1, 2, 3, 4, 5];
+    const find = values.find(isEven);
+    console.log(find);
+
+    function isEven(value) {
+        return value % 2 === 0;
+    }
+
+    //演習１７
+    const months = ['March', 'Jan', 'Feb', 'Dec'];
+    months.sort();
+    console.log(months);
+
+    const values = [1, 30, 4, 21, 100000];
+    values.sort();
+    console.log(values);
+
+    const values = [1, 30, 4, 21, 100000];
+    values.sort(compare);
+    console.log(values);
+    function compare(value1, value2) {
+        if (value1 < value2) {
+            return -1;
+        }
+        if (value2 < value1) {
+            return 1;
+        }
+        return 0;
+    }
+
+    //演習１８
+    const array = Array.from('foo');
+    console.log(array);
+
+    const set = new Set(['foo', 'bar', 'baz', 'foo']);
+    const setArray = Array.from(set);
+    console.log(setArray);
+    */
+
+    //演習１９
+    console.log(Array.isArray('foo'));
+    console.log(Array.isArray(new Set(['foo', 'bar', 'baz', 'foo'])));
+    console.log(Array.isArray([1, 2, 3], x => x + x));
+    console.log(Array.isArray({ foo: 123 }));
+    console.log(Array.isArray('foobar'));
+    console.log(Array.isArray(undefined));
+
+
 
 </script>
