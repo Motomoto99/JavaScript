@@ -1,17 +1,13 @@
 <script>
-    // 厳密比較演算子
-    let num = 0;
-    let str = "0";
-    console.log(num == str) //true
-    console.log(num === str) //false
-
-    try {
-        // リスクのあるコード
-        let result = riskyFunction();
-    } catch (error) {
-        console.error('エラーが発生しました:', error);
-    } finally {
-        console.log('このコードは常に実行されます');
+    if (true) {
+        let y = 20;
+        console.log(y);  // この行はどうなる？
     }
+
+    console.log(y);  // この行はどうなる？
+
+
+
+
 
 </script>
