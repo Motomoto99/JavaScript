@@ -1,0 +1,52 @@
+<script>
+    // グローバル変数
+    var counter = 0;
+    var name = "Global Name";
+    var items = ["item1", "item2", "item3"];
+    var result = 0;
+
+    function incrementCounter() {
+        counter += 1;
+    }
+
+    function showCounter() {
+        console.log("Counter: " + counter);
+    }
+
+    function addItem(item) {
+        items.push(item);
+        console.log("Items: " + items.join(", "));
+    }
+
+    function setName(newName) {
+        name = newName;
+        console.log("Updated Name: " + name);
+    }
+
+    function calculateSum(x, y) {
+        result = x + y;
+        console.log("Sum: " + result);
+    }
+
+    function complexLogic() {
+        console.log("Starting complex logic with name: " + name);
+        incrementCounter();
+        addItem("newItem");
+        setName("Updated Global Name");
+        calculateSum(5, 7);
+        console.log("Final Counter: " + counter);
+        console.log("All items: " + items.join(", "));
+    }
+
+    // 以下のコードブロックは意図的にグローバルスコープを汚染しています。
+    incrementCounter();
+    incrementCounter();
+    showCounter();
+
+    addItem("initialItem");
+    setName("Initial Name");
+
+    calculateSum(10, 20);
+
+    complexLogic();
+</script>
