@@ -1,0 +1,70 @@
+<script>
+    /*
+    // 授業中課題
+    let globalVar = "global";
+
+    function outerFunction(){
+        let outerVar = "outer";
+
+        function innerFunction(){
+            let innerVar = "inner";
+            console.log(globalVar);
+            console.log(outerVar);
+            console.log(innerVar);
+        }
+
+        innerFunction();
+
+        console.log(globalVar);
+        console.log(outerVar);
+        console.log(innerVar);
+    }
+
+    outerFunction();
+    
+    function funcA(){
+        console.log("A start");
+        funcB();
+        console.log("A end");
+    }
+    function funcB(){
+        console.log("B start");
+        funcC();
+        console.log("B end");
+    }
+    function funcC(){
+        console.log("C start");
+        funcD();
+        console.log("C end");
+    }
+    function funcD(){
+        console.log("D start");
+        console.log("D end");
+    }
+    
+   //宿題
+    const obj = {
+        name: 'Alice',
+        greet: function(){
+            console.log(this.name);
+        }
+    };
+
+    obj.greet();
+    const greet = obj.greet;
+    greet();
+
+    */
+
+    const obj = {
+        name: 'Alice',
+        greet: function(){
+            const innerGreet = () => {
+                console.log(this.name);
+            }
+            innerGreet();
+        }
+    }
+    obj.greet();
+
+</script>
