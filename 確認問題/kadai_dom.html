@@ -1,0 +1,37 @@
+<!--
+<input type="text" id="inputField" value="初期値">
+<button id="changeValueButton">値を変更</button>
+
+<script>
+    const inputField = document.querySelector('#inputField')
+    const changeValueButton = document.querySelector('#changeValueButton')
+
+    changeValueButton.addEventListener('click', () =>{
+        inputField.value = '新しい値'
+        console.log(inputField.value)
+    })
+</script>
+-->
+
+<!--祖先要素をさかのぼって検索-->
+<div id="ancestor" class="ancestor-class">
+    <div id="parent" class="parent-class">
+        <p id="child" class="child-class">子要素</p>
+    </div>
+</div>
+
+<script>
+    const child = document.getElementById('child')
+    const closestDiv = child.closest('div')
+    const closestAncestorClass = child.closest(".ancestor-class")
+    const closestAncestorId = child.closest("#ancestor")
+    const closestParentId = child.closest('#parent')
+    const closestNonExistent = child.closest('.non-existent-class')
+
+    console.log(closestDiv)
+    console.log(closestAncestorClass)
+    console.log(closestAncestorId)
+    console.log(closestParentId)
+    console.log(closestNonExistent)
+
+</script>
