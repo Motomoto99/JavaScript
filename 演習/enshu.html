@@ -1,0 +1,16 @@
+<div id="parent">
+    <p id="child1">子１</p>
+    <p id="child2">子２</p>
+    <span id="child3">子３</span>
+</div>
+
+<script>
+    const parent = document.getElementById('parent')
+    const children = parent.children
+    const child2 = document.getElementById('child2')
+    const parentOfChild2 = child2.parentElement
+
+    console.log(parent)
+    console.log(children)
+    console.log(parentOfChild2)
+</script>

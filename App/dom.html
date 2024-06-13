@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>静的HTMLサンプル</title>
+    <style>
+        #itemList {
+            list-style-type: none;
+        }
+
+        #itemList li {
+            padding: 5px;
+            background-color: lightgray;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>動的リスト</h1>
+    <ul id="itemList">
+        <li>アイテム1</li>
+        <li>アイテム2</li>
+        <li>アイテム3</li>
+    </ul>
+    <button id="addButton">アイテムを追加</button>
+    <button id="removeButton">最後のアイテムを削除</button>
+    <button id="toggleButton">リストの表示/非表示</button>
+    <script>
+
+
+        // 要素を取得
+        const itemList = document.querySelector('#itemList');
+        const addButton = document.querySelector('#addButton');
+        const removeButton = document.querySelector('#removeButton');
+        const toggleButton = document.querySelector('#toggleButton');
+
+        // アイテムを追加する関数
+        function addItem() {
+            const newItem = document.createElement('li');
+            newItem.textContent = `アイテム${itemList.children.length + 1}`;
+            itemList.appendChild(newItem);
+        }
+
+        // 最後のアイテムを削除する関数
+        function removeItem() {
+            const lastItem = itemList.querySelector('li:last-child');
+            if (lastItem) {
+                itemList.removeChild(lastItem);
+            }
+        }
+
+        // リストの表示/非表示を切り替える関数
+        function toggleList() {
+            if (itemList.style.display === 'none') {
+                itemList.style.display = 'block';
+            } else {
+                itemList.style.display = 'none';
+            }
+        }
+
+        // ボタンにイベントリスナーを追加
+        addButton.addEventListener('click', addItem);
+        removeButton.addEventListener('click', removeItem);
+        toggleButton.addEventListener('click', toggleList);
+
+
+    </script>
+</body>
+
+</html>
