@@ -1,0 +1,12 @@
+<script>
+const num = 77777
+let sumNum = 0
+for(let i=1;i<=1024;i++){
+    sumNum += Math.ceil(num / i)-1
+    console.log(Math.ceil(num / i)-1)
+    sumNum += num % i
+    console.log(num % i)
+}
+sumNum += 1
+console.log(sumNum)
+</script>
