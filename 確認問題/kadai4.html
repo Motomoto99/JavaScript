@@ -1,16 +1,20 @@
+<head>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
 <body>
-    <button id="colorButton">色を変える</button>
-    <button id="resetButton">リセット</button>
-    <div id="colorBox" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <div id="box">ここにマウスを乗せてください</div>
 
     <script>
-        document.getElementById("colorButton").addEventListener("click", function(){
-            document.getElementById("colorBox").sytle.backgroundColor = "lightgreen"
-        })
+        const box = document.getElementById(box)
 
-        document.getElementById("resetButton").addEventListener("click", function(){
-            document.getElementById("colorBox").style.backgroundColor = "lightblue"
+        box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = "red"
         })
-
     </script>
 </body>
