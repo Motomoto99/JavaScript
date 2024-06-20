@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Counter</title>
+</head>
+
+<body>
+    <div>
+        <button id="mius" onclick="decrement()">-</button>
+        <span id="number">0</span>
+        <button id="plus" onclick="increment()">+</button>
+    </div>
+    <script>
+        // 数値の初期化
+        let count = 0
+        // カウントを操作する
+        function increment() {
+            count++
+            document.getElementById("number").textContent = count
+        }
+
+        function decrement() {
+            count--
+            document.getElementById("number").textContent = count
+        }
+
+        // DOMが完全に読み込まれたあとにイベントリスナーを追加
+        document.addEventListener("DOMContentLoaded", function () {
+            const plusBtn = document.getElementById("plus")
+            const minusBtn = documtn.getElementById("minus")
+
+            plusBtn.addEventListener("click", increment)
+            minusBtn.addEventListener("click", decrement)
+        })
+
+    </script>
+</body>
+
+</html>
