@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>DOMツリーの操作例</h1>
+    <div id="content">
+        <p class="text">段落１</p>
+        <p class="text">段落２</p>
+        <p class="text highlight">段落３</p>
+        <p class="text">段落４</p>
+    </div>
+    <button id="highlightButton">ハイライト</button>
+
+    <script>
+        const highlightButton = document.getElementById("highlightButton")
+        const paragraphs = document.querySelectorAll('.text')
+
+        highlightButton.addEventListener('click',() => {
+            paragraphs.forEach(paragraph => {
+                paragraph.classList.add('highlight')
+            })
+        })
+
+    </script>
+
+</body>
+</html>

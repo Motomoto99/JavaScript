@@ -1,0 +1,16 @@
+<body>
+    <button id="colorButton">色を変える</button>
+    <button id="resetButton">リセット</button>
+    <div id="colorBox" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+
+    <script>
+        document.getElementById("colorButton").addEventListener("click", function(){
+            document.getElementById("colorBox").sytle.backgroundColor = "lightgreen"
+        })
+
+        document.getElementById("resetButton").addEventListener("click", function(){
+            document.getElementById("colorBox").style.backgroundColor = "lightblue"
+        })
+
+    </script>
+</body>

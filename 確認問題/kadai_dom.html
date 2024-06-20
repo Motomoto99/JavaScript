@@ -13,7 +13,7 @@
 </script>
 -->
 
-<!--祖先要素をさかのぼって検索-->
+<!--祖先要素をさかのぼって検索
 <div id="ancestor" class="ancestor-class">
     <div id="parent" class="parent-class">
         <p id="child" class="child-class">子要素</p>
@@ -33,5 +33,57 @@
     console.log(closestAncestorId)
     console.log(closestParentId)
     console.log(closestNonExistent)
-
 </script>
+-->
+<!--リストの操作
+    <ul id="myList">
+        <li>アイテム１</li>
+        <li>アイテム２</li>
+    </ul>
+    <button id="prependButton">アイテムを前に追加</button>
+    <button id="replaceButton">2番目のアイテムを置き換え</button>
+    <button id="clearButton">全てのアイテムを削除</button>
+
+    <script>
+        const myList = document.getElementById('myList')
+        const prependButton = document.getElementById('prependButton')
+        const replaceButton = document.getElementById('replaceButton')
+        const clearButton = document.getElementById('clearButton')
+
+        //1. prependButtonをクリックしたとき、リストの最初に「新しいアイテム」を追加する
+        prependButton.addEventListener('click',() => {
+            const newItem = document.createElement('li')
+            newItem.textContent = "新しいアイテム"
+            myList.prepend(newItem)
+        })
+
+        // replaceButtonをクリックしたとき、2番目のアイテムを「置き換えアイテム」置き換える
+        replaceButton.addEventListener('click',() => {
+            const secondItem = myList.children[1]
+            if(secondItem){
+                const newItem = document.createElement('li')
+                newItem.textContent = '置き換えアイテム'
+                myList.replaceChild(newItem,secondItem)
+            }
+        })
+
+        //2. clearButtonをクリックしたとき、リストのすべてのアイテムを削除する
+        clearButton.addEventListener('click',() => {
+            while(myList.firstChild){
+                myList.firstChild.remove()
+            }
+        })
+
+
+    </script>
+
+-->
+
+    <div id="example"></div>
+
+    <script>
+        const example = document.getElementById('example')
+        example.innerHTML = '<p>タグを含まないテキスト</p>'
+
+        console.log(example.textContent)
+    </script>
