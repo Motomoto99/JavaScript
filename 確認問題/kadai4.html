@@ -11,10 +11,14 @@
     <div id="box">ここにマウスを乗せてください</div>
 
     <script>
-        const box = document.getElementById(box)
+        const box = document.getElementById("box")
 
         box.addEventListener("mouseover", () => {
             box.style.backgroundColor = "red"
+        })
+
+        box.addEventListener("mouseout", () => {
+            box.style.backgroundColor = "lightblue"
         })
     </script>
 </body>

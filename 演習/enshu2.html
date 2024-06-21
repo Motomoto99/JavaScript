@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, inital-scale=1.0">
+    <title>JavaScript イベントリスナの演習</title>
+    <style>
+        .exercese{
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+        }
+        .exercese h3{
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript イベントリスナの演習</h1>
+    
+    <!--演習１：簡単なクリックイベント-->
+    <div class="exercese" id="exercese1">
+        <h3>1. 簡単なクリックイベント</h3>
+        <button id="myButton1">クリックして</button>
+        <div id="output1"></div>
+    </div>
+
+    <!--演習２：ダブルクリックでカウント-->
+    <div class="exercese" id="exercese2">
+        <h3>2. ダブルクリックでカウント</h3>
+        <button id="counterButton2">ダブルクリックで増やす</button>
+        <span id="counter2">0</span>
+    </div>
+
+    <!--演習３：キー入力イベント-->
+    <div class="exercese" id="exercese3">
+        <h3>3. キー入力イベント</h3>
+        <input type="text" id="keyInput3" placeholder="なにか入力してください...">
+        <p id="keyOutput3">入力されたテキストがここに表示されます。</p>
+    </div>
+
+    <!--演習４：マウスオーバーイベント-->
+    <div class="exercese" id="exercese4">
+        <h3>4. マウスオーバーイベント</h3>
+        <p id="hoverP4">ここにマウスを置いて！</p>
+        <p id="hoverOutput4">ボタンにマウスを置くと背景色が変わります</p>
+    </div>
+
+    <!--演習５：フォーカスとブルーイベント-->
+    <div class="exercese" id="exercese5">
+        <h3>5. フォーカスとブルーイベント</h3>
+        <input type="text" id="focusInput5" placeholder="この入力欄にフォーカスしてみて">
+        <p id="focusOutput5">フォーカスやブルーでテキストが変わります。</p>
+    </div>
+
+    <!--演習６：フォーム送信イベント-->
+    <div class="exercese" id="exercese6">
+        <h3>6. フォーム送信イベント</h3>
+        <form id="form6">
+            <input type="text" id="nameInput6" placeholder="名前を入力してください">
+            <button type="submit">送信</button>
+        </form>
+        <p id="formOutput6">フォームの送信ステータスがここに表示されます。</p>
+    </div>
+
+    <script>
+        const myButton1 = document.getElementById("myButton1")
+        const counterButton2 = document.getElementById("counterButton2")
+        const keyInput3 = document.getElementById("keyInput3")
+        const hoverP4 = document.getElementById("hoverP4")
+        const focusInput5 = document.getElementById("focusInput5")
+        const form6 = document.getElementById("form6")
+
+        myButton1.addEventListener("click",() => {
+            document.getElementById("output1").textContent = "こんにちは、世界！"
+        })
+
+        counterButton2.addEventListener("dblclick",() => {
+            const count = document.getElementById("counter2")
+            count.textContent = parseInt(count.textContent) + 1
+        })
+
+        keyInput3.addEventListener("input",() => {
+            document.getElementById("keyOutput3").textContent = keyInput3.value
+        })
+
+        hoverP4.addEventListener("mouseover",() => {
+            hoverP4.style.backgroundColor = "lightgreen"
+        })
+        hoverP4.addEventListener("mouseout", () => {
+            hoverP4.style.backgroundColor = "transparent"
+        })
+
+        focusInput5.addEventListener("focus", () => {
+            document.getElementById("focusOutput5").textContent = "入力欄にフォーカスされています！"
+        })
+        focusInput5.addEventListener("blur", () => {
+            document.getElementById("focusOutput5").textContent = "入力欄のフォーカスが外れました！"
+        })
+
+        form6.addEventListener("submit", event => {
+            event.preventDefault()
+            const nameInput = document.getElementById("nameInput6").value
+            document.getElementById("formOutput6").textContent = `こんにちは、${nameInput}さん！`
+        })
+
+    </script>
+
+</body>
+</html>
