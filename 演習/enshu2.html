@@ -72,19 +72,23 @@
         const focusInput5 = document.getElementById("focusInput5")
         const form6 = document.getElementById("form6")
 
+        // 演習１：簡単なクリックイベント
         myButton1.addEventListener("click",() => {
             document.getElementById("output1").textContent = "こんにちは、世界！"
         })
 
+        // 演習２：ダブルクリックでカウント
         counterButton2.addEventListener("dblclick",() => {
             const count = document.getElementById("counter2")
             count.textContent = parseInt(count.textContent) + 1
         })
 
+        // 演習３：キー入力イベント
         keyInput3.addEventListener("input",() => {
             document.getElementById("keyOutput3").textContent = keyInput3.value
         })
 
+        // 演習４：マウスオーバーイベント
         hoverP4.addEventListener("mouseover",() => {
             hoverP4.style.backgroundColor = "lightgreen"
         })
@@ -92,6 +96,7 @@
             hoverP4.style.backgroundColor = "transparent"
         })
 
+        // 演習５：フォーカスとブルーイベント
         focusInput5.addEventListener("focus", () => {
             document.getElementById("focusOutput5").textContent = "入力欄にフォーカスされています！"
         })
@@ -99,6 +104,7 @@
             document.getElementById("focusOutput5").textContent = "入力欄のフォーカスが外れました！"
         })
 
+        // 演習６：フォーム送信イベント
         form6.addEventListener("submit", event => {
             event.preventDefault()
             const nameInput = document.getElementById("nameInput6").value
