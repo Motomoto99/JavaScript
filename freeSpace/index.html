@@ -1,11 +1,37 @@
-<button id="alertButton">アラート</button>
-
 <script>
-    const btn = document.querySelector("#alertButton")
-    btn.onclick = function(){
-        alert("アラート！")
+    const solution = (logs) => {
+        let total = 0; // 給料合計
+        let in_out = [];
+        let timeStamp = [];
+
+        // 勤務と休憩の配列に振り分け
+        for (let i = 0; i < logs.length; i++) {
+            let log = logs[i].split(',');
+            if (log[0] === "IN" || log[0] === "OUT") {
+                in_out.push(log[1]);
+            } else {
+                timeStamp.push(log[1]);
+            }
+        }
+
+        // 勤務の給料計算
+        for (let i = 0; i < in_out.length; i += 2) {
+            let inTime = new Date(in_out[i]);
+            let outTime = new Date(in_out[i + 1]);
+            let dif = (outTime - inTime) / 3600000; // ミリ秒を時間に変換
+            total += dif * 1000;
+        }
+
+        // 休憩の給料減算
+        for (let i = 0; i < timeStamp.length; i += 2) {
+            let stampTime = new Date(timeStamp[i]);
+            let returnTime = new Date(timeStamp[i + 1]);
+            let dif = (returnTime - stampTime) / 3600000; // ミリ秒を時間に変換
+            total -= dif * 1000;
+        }
+
+        return total;
     }
-
-    btn.onclick = null
-
+    const str = ["IN,2024/01/26 09:00:00","TEMP_OUT,2024/01/26 12:00:00", "RETURNED,2024/01/26 12:30:00", "OUT,2024/01/26 15:00:00"]
+    console.log(solution(str))
 </script>
