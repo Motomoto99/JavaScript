@@ -19,7 +19,7 @@ function checkDate(dateString) {
 
     const daysInMonth = [31, (isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     if (day > daysInMonth[month - 1]) {
-        return 3; // YYYYMMDDの形式でない
+        return (month === 2 && day === 29) ? 4 : 3 //うるう年の誤りまたはYYYYMMDDの形式ではない
     }
 
     return 0; // 正常
